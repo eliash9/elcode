@@ -1,0 +1,99 @@
+---
+import "../styles/global.css";
+const { title = 'ELCODE — Elevating Coding!', description = 'Komunitas coding: tutorial singkat, konsep dasar-lanjutan, berita teknologi, dan inspirasi proyek. Mari tumbuh bersama ELCODE.', canonical = '/' } = Astro.props;
+const currentUrl = Astro.url?.pathname || '/';
+---
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ELCODE — Elevating Coding!" />
+    <meta property="og:description" content="Komunitas coding: tutorial singkat, konsep dasar-lanjutan, berita teknologi, dan inspirasi proyek. Mari tumbuh bersama ELCODE." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:alt" content="ELCODE — Elevating Coding!" />
+    <meta property="og:url" content={currentUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ELCODE — Elevating Coding!" />
+    <meta name="twitter:description" content="Komunitas coding: tutorial singkat, konsep dasar-lanjutan, berita teknologi, dan inspirasi proyek. Mari tumbuh bersama ELCODE." />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'ELCODE',
+        url: 'https://elcode.example',
+        logo: '/og-image.png',
+        sameAs: [
+          'https://chat.whatsapp.com/ELCODE-PLACEHOLDER',
+          'https://www.threads.net/@eliash.el',
+          'https://github.com/eliash9',
+        ],
+      })}
+    </script>
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'ELCODE',
+        url: 'https://elcode.example',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: 'https://elcode.example/search?q={search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      })}
+    </script>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0B1220" />
+
+    
+  </head>
+  <body class="min-h-screen">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:rounded-md focus:shadow-soft">Lewati ke konten utama</a>
+    <slot />
+    <script is:inline>
+      try {
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduce && 'IntersectionObserver' in window) {
+          const els = document.querySelectorAll('.reveal-on-scroll');
+          const obs = new IntersectionObserver((entries, o) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                o.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+          els.forEach((el) => obs.observe(el));
+        } else {
+          document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('is-visible'));
+        }
+      } catch (e) {}
+    </script>
+  </body>
+</html>
+    <script>
+      try {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if ((stored === 'dark') || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>

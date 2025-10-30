@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#F7DF1E"/>
+      <stop offset="1" stop-color="#F2C400"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="36" fill="url(#g1)"/>
+  <g fill="none" stroke="#000" stroke-opacity="0.1">
+    <rect x="80" y="80" width="1040" height="515" rx="24"/>
+    <path d="M160 180h240M160 240h320M160 300h280M160 360h360M160 420h300"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-weight="800" fill="#111">
+    <text x="100" y="160" font-size="56">JavaScript</text>
+  </g>
+  <g transform="translate(950,120)">
+    <rect x="0" y="0" width="150" height="150" rx="24" fill="#111" opacity="0.1"/>
+    <text x="75" y="100" text-anchor="middle" font-family="Inter, Arial" font-weight="900" font-size="72" fill="#111">JS</text>
+  </g>
+</svg>
+

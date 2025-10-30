@@ -1,0 +1,47 @@
+---
+const label = 'Ubah tema';
+---
+<button
+  id="theme-toggle"
+  class="inline-flex h-9 w-9 items-center justify-center rounded-full text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+  type="button"
+  aria-label={label}
+  title={label}
+>
+  <span id="icon-sun" class="hidden" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>
+  </span>
+  <span id="icon-moon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+  </span>
+</button>
+
+<script>
+  const btn = document.getElementById('theme-toggle');
+  const sun = document.getElementById('icon-sun');
+  const moon = document.getElementById('icon-moon');
+  const doc = document.documentElement;
+  function isDark() { return doc.classList.contains('dark'); }
+  function setTheme(dark) {
+    if (dark) {
+      doc.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      if (sun) sun.classList.remove('hidden');
+      if (moon) moon.classList.add('hidden');
+    } else {
+      doc.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      if (sun) sun.classList.add('hidden');
+      if (moon) moon.classList.remove('hidden');
+    }
+  }
+  // Initialize icon state
+  setTheme(isDark());
+  btn?.addEventListener('click', () => setTheme(!isDark()));
+</script>
+

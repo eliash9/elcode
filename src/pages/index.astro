@@ -1,0 +1,208 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import Testimonial from "../components/Testimonial.astro";
+import Newsletter from "../components/Newsletter.astro";
+import FAQ from "../components/FAQ.astro";
+import LanguageLogo from "../components/LanguageLogo.astro";
+
+const faqItems = [
+  { q: 'ELCODE itu apa?', a: 'ELCODE adalah komunitas terbuka bagi siapa pun yang tertarik pada pemrograman. Kami berbagi tutorial, konsep, berita teknologi, dan inspirasi proyek.' },
+  { q: 'Apakah berbayar?', a: 'Tidak. ELCODE gratis untuk diikuti. Beberapa aktivitas spesifik mungkin membutuhkan dukungan sukarela, namun konten inti tetap gratis.' },
+  { q: 'Bagaimana cara berkontribusi?', a: 'Anda bisa mengirim artikel, berbagi proyek, menjawab pertanyaan, atau membantu moderasi. Silakan hubungi kami melalui halaman Contact.' },
+  { q: 'Apakah ada meetup online?', a: 'Ada! Kami mengadakan sesi online berkala untuk diskusi topik tertentu dan live coding.' },
+];
+---
+<BaseLayout>
+  <Navbar />
+  <main id="main">
+    <Hero />
+
+    <Section id="temukan" title="Temukan di ELCODE" description="Sumber belajar ringkas dan tepat sasaran. Dibuat untuk membantu Anda berkembang dari dasar hingga mahir.">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <FeatureCard
+          href="#tutorial"
+          title="Tutorial"
+          description="Tutorial singkat untuk berbagai bahasa: PHP, JavaScript, Python, dan lainnya."
+          class="reveal-on-scroll"
+        >
+          <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 006.5 22h11A2.5 2.5 0 0020 19.5V5H4v14.5zM4 5l8-3 8 3"/></svg>
+        </FeatureCard>
+
+        <FeatureCard
+          href="#konsep"
+          title="Konsep"
+          description="Pembahasan konsep dasar hingga lanjutan dalam development."
+          class="reveal-on-scroll reveal-right"
+        >
+          <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-12M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg>
+        </FeatureCard>
+
+        <FeatureCard
+          href="#berita"
+          title="Berita"
+          description="Berita terbaru tentang teknologi dan tools pemrograman."
+          class="reveal-on-scroll reveal-scale"
+        >
+          <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm4 4h8M8 12h8M8 15h5"/></svg>
+        </FeatureCard>
+
+        <FeatureCard
+          href="#proyek"
+          title="Proyek"
+          description="Inspirasi proyek dan tantangan coding untuk meningkatkan skill Anda."
+          class="reveal-on-scroll reveal-left"
+        >
+          <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </FeatureCard>
+      </div>
+    </Section>
+
+    <Section id="tutorial" title="Tutorial" description="Belajar cepat dengan contoh nyata untuk berbagai bahasa dan framework.">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="card p-6 reveal-on-scroll">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/js-illustration.svg" alt="Ilustrasi JavaScript — kode dan logo JS" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <div class="mt-4 flex items-center gap-3">
+            <LanguageLogo name="javascript" size={40} />
+            <h3 class="font-semibold text-slate-900 dark:text-slate-100">JavaScript</h3>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Dasar-dasar ES6+, DOM, dan praktikum kecil untuk memperkuat pemahaman.</p>
+        </article>
+        <article class="card p-6 reveal-on-scroll reveal-right">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/php-illustration.svg" alt="Ilustrasi PHP — tipografi dan panel kode" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <div class="mt-4 flex items-center gap-3">
+            <LanguageLogo name="php" size={40} />
+            <h3 class="font-semibold text-slate-900 dark:text-slate-100">PHP</h3>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Tutorial singkat sintaks, koneksi database, hingga praktik API sederhana.</p>
+        </article>
+        <article class="card p-6 reveal-on-scroll reveal-scale">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/python-illustration.svg" alt="Ilustrasi Python — gradien biru-kuning dan panel kode" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <div class="mt-4 flex items-center gap-3">
+            <LanguageLogo name="python" size={40} />
+            <h3 class="font-semibold text-slate-900 dark:text-slate-100">Python</h3>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Pemrograman Python untuk otomasi, data, dan web dengan contoh ringkas.</p>
+        </article>
+      </div>
+    </Section>
+
+    <Section id="konsep" title="Konsep" description="Pahami fondasi penting dalam software engineering agar solusi Anda kokoh.">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="card p-6 reveal-on-scroll">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/konsep-algoritma.svg" alt="Ilustrasi Algoritma dan Struktur Data — diagram dan node" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">Algoritma & Struktur Data</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Konsep inti untuk efisiensi pemecahan masalah.</p>
+        </article>
+        <article class="card p-6 reveal-on-scroll reveal-right">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/konsep-arsitektur.svg" alt="Ilustrasi Arsitektur Aplikasi — modul dan panah alur" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">Arsitektur Aplikasi</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Pola desain, modularitas, dan praktik terbaik.</p>
+        </article>
+        <article class="card p-6 reveal-on-scroll reveal-scale">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/konsep-testing.svg" alt="Ilustrasi Testing & QA — checklist dan badge" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">Testing & QA</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Menjamin kualitas melalui pengujian yang tepat.</p>
+        </article>
+      </div>
+    </Section>
+
+    <Section id="berita" title="Berita" description="Rangkuman update teknologi, rilis framework, dan tools terbaru.">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="card p-6 reveal-on-scroll">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/berita-framework.svg" alt="Ilustrasi Rilis Framework — catatan rilis dan roket" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">Rilis Framework</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Ikuti fitur terbaru yang relevan untuk workflow Anda.</p>
+        </article>
+        <article class="card p-6 reveal-on-scroll reveal-right">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/berita-ekosistem.svg" alt="Ilustrasi Ekosistem Dev — puzzle dan integrasi" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">Ekosistem Dev</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Tools, plugin, dan layanan yang patut dicoba.</p>
+        </article>
+        <article class="card p-6 reveal-on-scroll reveal-scale">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/berita-tren.svg" alt="Ilustrasi Tren Industri — grafik tren" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">Tren Industri</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Analisis singkat dan dampaknya bagi developer.</p>
+        </article>
+      </div>
+    </Section>
+
+    <Section id="proyek" title="Proyek & Tantangan" description="Latih skill melalui proyek kecil dan tantangan mingguan yang menyenangkan.">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="card p-6 reveal-on-scroll">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/proyek-landing.svg" alt="Ilustrasi Build Landing Page — layout wireframe" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">Build Landing Page</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Coba replikasi desain dan optimasi performa.</p>
+        </article>
+        <article class="card p-6 reveal-on-scroll reveal-right">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 img-zoom">
+            <img src="/images/proyek-api.svg" alt="Ilustrasi API Mini — endpoint dan data" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">API Mini</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Bangun API sederhana dan dokumentasinya.</p>
+        </article>
+        <article class="card p-6 reveal-on-scroll reveal-scale">
+          <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+            <img src="/images/proyek-ui.svg" alt="Ilustrasi UI Component — tombol dan kartu" class="h-full w-full object-cover" loading="lazy" width="1200" height="675" />
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900 dark:text-slate-100">UI Component</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Buat komponen UI reusable dengan aksesibilitas baik.</p>
+        </article>
+      </div>
+    </Section>
+
+    <section class="py-8">
+      <div class="container-px mx-auto">
+        <div class="card p-8 text-center reveal-on-scroll reveal-scale">
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Siap bergabung?</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Cocok untuk pemula hingga profesional. Mari belajar, berbagi, dan tumbuh bersama komunitas ELCODE 🚀</p>
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <a href="https://whatsapp.com/channel/0029VaFGhM05Ui2ZtuEXWC3N" target="_blank" rel="noopener" class="btn btn-accent">Gabung Komunitas</a>
+            <a href="/#tutorial" class="btn btn-primary">Lihat Tutorial</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Section title="Apa kata mereka?">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="reveal-on-scroll" style="transition-delay: 60ms"><Testimonial quote="Belajar bareng ELCODE bikin progres saya konsisten." author="Raka" role="Frontend Dev" /></div>
+        <div class="reveal-on-scroll reveal-right" style="transition-delay: 140ms"><Testimonial quote="Diskusinya aktif, jawabannya to the point." author="Dina" role="Backend Engineer" /></div>
+        <div class="reveal-on-scroll reveal-scale" style="transition-delay: 220ms"><Testimonial quote="Project challenge-nya seru dan bermanfaat." author="Iqbal" role="Fullstack" /></div>
+      </div>
+    </Section>
+
+    <Section title="Newsletter">
+      <div class="reveal-on-scroll reveal-scale"><Newsletter /></div>
+    </Section>
+
+    <Section title="FAQ">
+      <div class="reveal-on-scroll"><FAQ items={faqItems} /></div>
+    </Section>
+  </main>
+  <Footer />
+</BaseLayout>

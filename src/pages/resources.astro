@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+---
+<BaseLayout title="Resources — ELCODE" description="Jelajahi kategori materi di ELCODE: Tutorial, Konsep, Berita, dan Proyek.">
+  <Navbar />
+  <main id="main" class="container-px mx-auto py-16">
+    <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">Resources</h1>
+    <p class="mt-2 text-slate-600 max-w-2xl dark:text-slate-300">Daftar kategori materi di ELCODE. Setiap kartu menaut ke bagian terkait di halaman utama.</p>
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <FeatureCard href="/#tutorial" title="Tutorial" description="Masuk ke materi belajar singkat.">
+        <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 006.5 22h11A2.5 2.5 0 0020 19.5V5H4v14.5zM4 5l8-3 8 3"/></svg>
+      </FeatureCard>
+      <FeatureCard href="/#konsep" title="Konsep" description="Fondasi teori dan praktik.">
+        <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-12M7 8l-4 4 4 4M17 8l4 4-4 4"/></svg>
+      </FeatureCard>
+      <FeatureCard href="/#berita" title="Berita" description="Update ekosistem dan industri.">
+        <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm4 4h8M8 12h8M8 15h5"/></svg>
+      </FeatureCard>
+      <FeatureCard href="/#proyek" title="Proyek" description="Latihan dan tantangan coding.">
+        <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </FeatureCard>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

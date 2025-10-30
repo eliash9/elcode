@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+<BaseLayout title="Tentang — ELCODE" description="Misi ELCODE: memberdayakan developer melalui komunitas belajar yang inklusif dan kolaboratif.">
+  <Navbar />
+  <main id="main" class="container-px mx-auto py-16">
+    <article class="prose prose-slate dark:prose-invert max-w-3xl">
+      <h1>Tentang ELCODE</h1>
+      <p><strong>ELCODE — Elevating Coding!</strong> adalah komunitas developer yang mendorong pembelajaran berkelanjutan. Kami percaya bahwa kemampuan pemrograman berkembang paling baik melalui <em>belajar bareng</em>, berbagi pengalaman, dan kolaborasi.</p>
+
+      <h2>Misi</h2>
+      <ul>
+        <li>Menyediakan materi ringkas dan praktis untuk mempercepat proses belajar.</li>
+        <li>Membangun budaya berbagi yang positif dan suportif.</li>
+        <li>Menghubungkan pemula hingga profesional untuk saling menginspirasi.</li>
+      </ul>
+
+      <h2>Nilai Komunitas</h2>
+      <ul>
+        <li><strong>Terbuka</strong>: semua orang dipersilakan berpartisipasi.</li>
+        <li><strong>Inklusif</strong>: ramah pemula, mengapresiasi berbagai latar belakang.</li>
+        <li><strong>Kolaboratif</strong>: kita tumbuh lebih cepat saat bekerja bersama.</li>
+      </ul>
+
+      <h2>Bagaimana Berkontribusi</h2>
+      <p>Anda dapat berkontribusi dengan berbagai cara: menulis artikel, membuat tutorial, berbagi proyek, memberikan feedback, atau membantu moderasi diskusi. Mulailah dengan menghubungi kami melalui halaman <a href="/contact">Contact</a>.</p>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

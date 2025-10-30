@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="g3" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#3776AB"/>
+      <stop offset="1" stop-color="#FFD43B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="36" fill="url(#g3)"/>
+  <g fill="none" stroke="#000" stroke-opacity="0.15">
+    <rect x="80" y="80" width="1040" height="515" rx="24"/>
+    <path d="M180 190h300M180 250h360M180 310h280M180 370h340M180 430h260"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-weight="800" fill="#111">
+    <text x="100" y="160" font-size="56">Python</text>
+  </g>
+  <g transform="translate(930,120)">
+    <rect x="0" y="0" width="180" height="150" rx="24" fill="#000" opacity="0.12"/>
+    <text x="90" y="100" text-anchor="middle" font-family="Inter, Arial" font-weight="900" font-size="64" fill="#111">Py</text>
+  </g>
+</svg>
+

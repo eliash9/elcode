@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bf" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#DBEAFE"/>
+      <stop offset="1" stop-color="#C7D2FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="36" fill="url(#bf)"/>
+  <g fill="none" stroke="#3B82F6" stroke-width="4">
+    <rect x="180" y="200" width="480" height="240" rx="20"/>
+    <path d="M220 240h300M220 280h260M220 320h340"/>
+    <path d="M820 260c60 0 110 50 110 110" stroke="#22C55E"/>
+    <path d="M820 260l-20 40 40-20z" fill="#22C55E" stroke="none"/>
+  </g>
+  <text x="100" y="150" font-family="Inter, Arial" font-weight="800" font-size="48" fill="#0F172A">Rilis Framework</text>
+</svg>
+
